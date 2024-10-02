@@ -1,0 +1,92 @@
+---
+title: "Exploratory Data Analysis on World Development Indicators dataset"
+author: "Simon"
+date: "2024-10-02"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: true
+bibliography: references.bib
+---
+
+
+# 3. Exploratory Data Analysis
+I performed analysis on three variables using pandas[@reback2020pandas]: gdp_per_capita, life_expectancy, and unemployment_rate.
+
+- This is the key statistics of the three indicators
+```{python}
+#| echo: false
+#| label: fig-summary 
+
+import numpy as np
+import pandas as pd
+
+df = pd.read_csv('wdi.csv')
+print(df[['gdp_per_capita', 'life_expectancy', 'unemployment_rate']].describe())
+```
+
+- This is the correlation matrix of the three indicators.
+```{python}
+#| echo: false
+#| label: fig-corr 
+
+import numpy as np
+import pandas as pd
+
+df = pd.read_csv('wdi.csv')
+print(df[['gdp_per_capita', 'life_expectancy', 'unemployment_rate']].corr())
+```
+
+- There seem to exist a moderate positive correlation between GDP per capita and Life Expectancy.
+
+# 4. Visualizations
+
+The visualization is created using Matplotlib from [@Hunter:2007].
+
+```{python}
+#| echo: false
+#| fig-cap: "Distribution of GDP per Capita"
+#| label: fig-gdp 
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+df = pd.read_csv('wdi.csv')
+plt.hist(df['gdp_per_capita'], bins=20, edgecolor='black')
+plt.title('Gdp_per_capita Distribution')
+plt.xlabel('gdp_per_capita')
+plt.show()
+```
+```{python}
+#| echo: false
+#| fig-cap: "Life Expectancy VS. Unemplotment Rate"
+#| label: fig-compare 
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+df = pd.read_csv('wdi.csv')
+plt.scatter(df['life_expectancy'], df['unemployment_rate'])
+plt.title('life_expectancy vs unemployment_rate')
+plt.xlabel('life_expectancy')
+plt.ylabel('unemployment_rate')
+plt.show()
+```
+
+- As shown in [Fig @fig-compare], there is a moderate negative correlation between life expectanct and unemplotment rate.
+
+# 5. Table
+
+| Variables            | gdp_per_capita | life_expectancy | unemployment_rate |
+|----------------------|----------------|-----------------|------------------|
+| **Mean**             | 20345.71       | 72.42           | 7.27             |
+| **Median**           | 7587.59        | 73.51           | 5.54             |
+| **Standard Deviation**| 31308.94       | 7.71            | 5.83             |
+
+: Table of Key Statistics of Varibables
+
+
+- The table's statistics align with [Fig @fig-gdp], showing the high standard deviation of gdp_per_capita.

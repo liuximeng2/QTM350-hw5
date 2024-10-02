@@ -1,0 +1,62 @@
+---
+title: "Exploratory Data Analysis on World Development Indicators dataset"
+author: "Simon"
+date: "2024-10-02"
+format: 
+  revealjs:
+    theme: night  # Custom theme: available themes include black, white, league, beige, sky, night, serif, simple, etc.
+    transition: fade  # Custom transition: available effects include none, fade, slide, convex, concave, zoom
+    slide-number: true  # Shows slide numbers on each slide
+    controls: true  # Enables navigation controls
+    progress: true  # Displays progress bar
+bibliography: references.bib
+---
+
+
+# Exploratory Data Analysis
+
+**Simon**  
+**2024-10-02**
+
+## Introduction
+
+- This presentation covers exploratory data analysis on three variables:
+  - GDP per Capita
+  - Life Expectancy
+  - Unemployment Rate
+- Tools used:  
+  - **Pandas** for data manipulation [@reback2020pandas]
+  - **Matplotlib** for visualization [@Hunter:2007]
+
+## GDP per Capita Distribution
+
+![GDP per Capita Distribution](image/gpd-per-capita-distribution.png){#fig-gdp_per_capita}
+
+- The distribution is extremely right-skewed
+- The average GDP per capita in the dataset is 20345.71.
+- There is a high standard deviation, indicating significant variation.
+
+
+## Life Expectancy vs. Unemployment Rate
+
+![Life Expectancy vs Unemployment Rate](image/compare.png){#fig-life_unemployment}
+
+- There is a slight negative correlation between life expectancy and unemployment rate.
+- Further investigation could reveal underlying socioeconomic factors.
+
+## Key Statistics
+
+| Variables            | gdp_per_capita | life_expectancy | unemployment_rate |
+|----------------------|----------------|-----------------|------------------|
+| **Mean**             | 20345.71       | 72.42           | 7.27             |
+| **Median**           | 7587.59        | 73.51           | 5.54             |
+| **Sigma**| 31308.94       | 7.71            | 5.83             |
+
+- This table summarizes the key statistics from the dataset.
+
+## Conclusion
+
+- The analysis highlights important trends in the dataset.
+- Future analysis could focus on exploring correlations between GDP, life expectancy, and other socioeconomic indicators.
+
+**Thank you!**
