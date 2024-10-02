@@ -1,5 +1,4 @@
 project:
-  title: "hw5"
+  type: website
 
-
-
+output-dir: docs

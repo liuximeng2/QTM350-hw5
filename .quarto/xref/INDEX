@@ -1,8 +1,12 @@
 {
   "hw5.qmd": {
-    "hw5.html": "dae5e363"
+    "hw5.html": "dae5e363",
+    "hw5.tex": "ce00083c"
   },
   "slide.qmd": {
     "slide.html": "7acc8b9c"
+  },
+  "05-assignment.ipynb": {
+    "05-assignment.html": "2a9413cc"
   }
 }
