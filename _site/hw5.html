@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.5.57" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-
-<meta name="author" content="Simon" />
-<meta name="dcterms.date" content="2024-10-02" />
+<meta name="author" content="Simon">
+<meta name="dcterms.date" content="2024-10-02">
 
 <title>Exploratory Data Analysis on World Development Indicators dataset</title>
 <style>
@@ -46,7 +44,22 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -86,7 +99,15 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link active" data-scroll-target="#exploratory-data-analysis">3. Exploratory Data Analysis</a></li>
+  <li><a href="#visualizations" id="toc-visualizations" class="nav-link" data-scroll-target="#visualizations">4. Visualizations</a></li>
+  <li><a href="#table" id="toc-table" class="nav-link" data-scroll-target="#table">5. Table</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="hw5.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -121,23 +142,15 @@ div.csl-indent {
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis">3. Exploratory Data Analysis</a></li>
-  <li><a href="#visualizations" id="toc-visualizations">4. Visualizations</a></li>
-  <li><a href="#table" id="toc-table">5. Table</a></li>
-  </ul>
-</nav>
+
 <section id="exploratory-data-analysis" class="level1">
 <h1>3. Exploratory Data Analysis</h1>
 <p>I performed analysis on three variables using pandas<span class="citation" data-cites="reback2020pandas">(<a href="#ref-reback2020pandas" role="doc-biblioref">team 2020</a>)</span>: gdp_per_capita, life_expectancy, and unemployment_rate.</p>
 <ul>
 <li>This is the key statistics of the three indicators</li>
 </ul>
-<div id="fig-summary" class="cell quarto-float quarto-figure quarto-figure-center" data-execution_count="1">
-<figure class="quarto-float quarto-float-fig">
+<div id="fig-summary" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="1">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-stdout">
 <pre><code>       gdp_per_capita  life_expectancy  unemployment_rate
@@ -152,15 +165,15 @@ max     240862.182448        85.377000          37.852000</code></pre>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 1
+Figure&nbsp;1
 </figcaption>
 </figure>
 </div>
 <ul>
 <li>This is the correlation matrix of the three indicators.</li>
 </ul>
-<div id="fig-corr" class="cell quarto-float quarto-figure quarto-figure-center" data-execution_count="2">
-<figure class="quarto-float quarto-float-fig">
+<div id="fig-corr" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="2">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-corr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output cell-output-stdout">
 <pre><code>                   gdp_per_capita  life_expectancy  unemployment_rate
@@ -170,7 +183,7 @@ unemployment_rate       -0.216684        -0.217359           1.000000</code></pr
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-corr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 2
+Figure&nbsp;2
 </figcaption>
 </figure>
 </div>
@@ -183,13 +196,13 @@ Figure 2
 <p>The visualization is created using Matplotlib from <span class="citation" data-cites="Hunter:2007">(<a href="#ref-Hunter:2007" role="doc-biblioref">Hunter 2007</a>)</span>.</p>
 <div id="cell-fig-gdp" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
-<div id="fig-gdp" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
+<div id="fig-gdp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="hw5_files/figure-html/fig-gdp-output-1.png" width="595" height="449" />
+<img src="hw5_files/figure-html/fig-gdp-output-1.png" width="595" height="449" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 3: Distribution of GDP per Capita
+Figure&nbsp;3: Distribution of GDP per Capita
 </figcaption>
 </figure>
 </div>
@@ -197,31 +210,31 @@ Figure 3: Distribution of GDP per Capita
 </div>
 <div id="cell-fig-compare" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
-<div id="fig-compare" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
+<div id="fig-compare" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-compare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="hw5_files/figure-html/fig-compare-output-1.png" width="585" height="449" />
+<img src="hw5_files/figure-html/fig-compare-output-1.png" width="585" height="449" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-compare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure 4: Life Expectancy VS. Unemplotment Rate
+Figure&nbsp;4: Life Expectancy VS. Unemplotment Rate
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li>As shown in <a href="#fig-compare" class="quarto-xref">Fig 4</a>, there is a moderate negative correlation between life expectanct and unemplotment rate.</li>
+<li>As shown in <a href="#fig-compare" class="quarto-xref">Fig&nbsp;4</a>, there is a moderate negative correlation between life expectanct and unemplotment rate.</li>
 </ul>
 </section>
 <section id="table" class="level1">
 <h1>5. Table</h1>
-<table class="caption-top" style="width:100%;">
+<table class="caption-top table">
 <caption>Table of Key Statistics of Varibables</caption>
 <colgroup>
-<col style="width: 30%" />
-<col style="width: 21%" />
-<col style="width: 23%" />
-<col style="width: 24%" />
+<col style="width: 30%">
+<col style="width: 21%">
+<col style="width: 23%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -253,26 +266,22 @@ Figure 4: Life Expectancy VS. Unemplotment Rate
 </tbody>
 </table>
 <ul>
-<li>The table’s statistics align with <a href="#fig-gdp" class="quarto-xref">Fig 3</a>, showing the high standard deviation of gdp_per_capita.</li>
+<li>The table’s statistics align with <a href="#fig-gdp" class="quarto-xref">Fig&nbsp;3</a>, showing the high standard deviation of gdp_per_capita.</li>
 </ul>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar-title">Exploratory Data Analysis on World Development Indicators dataset</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar-title">Exploratory Data Analysis on World Development Indicators dataset</span></p>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metatitle">Exploratory Data Analysis on World Development Indicators dataset</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercardtitle">Exploratory Data Analysis on World Development Indicators dataset</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardtitle">Exploratory Data Analysis on World Development Indicators dataset</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercarddesc"></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardddesc"></span></p>
-</div>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Hunter:2007" class="csl-entry" role="listitem">
 Hunter, J. D. 2007. <span>“Matplotlib: A 2D Graphics Environment.”</span> <em>Computing in Science &amp; Engineering</em>. <a href="https://doi.org/10.1109/MCSE.2007.55">https://doi.org/10.1109/MCSE.2007.55</a>.
 </div>
 <div id="ref-reback2020pandas" class="csl-entry" role="listitem">
 team, The pandas development. 2020. <span>“Pandas-Dev/Pandas: Pandas.”</span> <em>Zenodo</em>. <a href="https://doi.org/10.5281/zenodo.3509134">https://doi.org/10.5281/zenodo.3509134</a>.
 </div>
-</div>
-</section>
-
-</main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -694,6 +703,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 
-</body>
 
-</html>
+
+
+</body></html>
